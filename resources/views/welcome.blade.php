@@ -15,6 +15,7 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                     <a href="{{ route('registro.index') }}">Registro</a>
+                    <a href="{{ route('registro_s.index') }}">Registro servicio</a>
                     <a href="{{ route('login') }}">Login</a>
                 </div>
             </div>

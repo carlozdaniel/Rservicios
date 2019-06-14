@@ -19,3 +19,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('registro', 'c_RegistroUsuario');
+Route::resource('registro_s', 'c_RegistroProducto');
