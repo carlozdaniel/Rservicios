@@ -13,7 +13,7 @@
                         </div>
                     @endif
                      <h1>
-                        Bienbenido
+                        Bienvenido
                         {{ $tip }} {{ auth()->user()->name }}
                     </h1>
                 </div>

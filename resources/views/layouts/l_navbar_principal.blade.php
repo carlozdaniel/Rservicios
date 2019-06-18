@@ -67,7 +67,7 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">RServicio</a>
+      <a class="navbar-brand" href="{{  route('principal') }}">RServicio</a>
     </div>
     <ul class="nav navbar-nav">
 
