@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
+    @yield('links')
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
@@ -64,10 +64,10 @@
             }
         </style>
 
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color: #44B8F2;">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="{{  route('principal') }}">RServicio</a>
+      <a class="navbar-brand" style="color: #fff;" href="{{  route('principal') }}">RServicio</a>
     </div>
     <ul class="nav navbar-nav">
 
@@ -83,14 +83,14 @@
                             <!-- Authentication Links -->
           @guest
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('login') }}">{{ __('Inicio') }}</a>
+                <a class="nav-link" style="color: #fff;" href="{{ route('login') }}">{{ __('Inicio') }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('registro.index') }}">{{ __('Registro') }}</a>
+                <a class="nav-link" style="color: #fff;" href="{{ route('registro.index') }}">{{ __('Registro') }}</a>
             </li>
            @else
             <li class="nav-item dropdown">
-                    <a class="dropdown-item" href="{{ route('logout') }}"
+                    <a class="nav-link" style="color: #fff;" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
                         {{ __('Salir') }}

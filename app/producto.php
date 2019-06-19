@@ -7,13 +7,19 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class categoria extends Model
+class producto extends Model
 {
-    protected $table = "categoria_pro";
+    protected $table = 'producto';
     public $timestamps = false;
 
     protected $fillable = [
-    	'id_categoria',
     	'id_producto',
+    	'nombre_producto',
+    	'id_vendedor',
+    	'id_disponibilidad',
+    	'precio',
+    	'unidades',
+    	'descripcion',
+    	'descuento',
     ];
 }
