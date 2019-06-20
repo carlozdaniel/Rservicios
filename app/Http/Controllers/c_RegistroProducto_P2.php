@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\DB;
+use Cookie;
+
+use App\categoria;
 
 class c_RegistroProducto_P2 extends Controller
 {
@@ -54,13 +57,6 @@ class c_RegistroProducto_P2 extends Controller
             'descuento' => $request['descuento'],
             ]); 
 
-           DB::update("UPDATE categoria_pro SET 
-            id_producto = '".$request['cod_producto']."'
-            WHERE id_producto = '".$request['id_producto']."'
-            ");
-
-           DB::delete("DELETE FROM producto WHERE id_producto = '".$request['id_producto']."'");
-
         }else{
 
             $producto = producto::create([
@@ -73,18 +69,19 @@ class c_RegistroProducto_P2 extends Controller
             'descripcion' => $request['descripcion'],
             ]); 
 
-           DB::update("UPDATE categoria_pro SET 
-            id_producto = '".$request['cod_producto']."'
-            WHERE id_producto = '".$request['id_producto']."'
-            ");
-
-           DB::delete("DELETE FROM producto WHERE id_producto = '".$request['id_producto']."'");
-
         }
 
-        $id = $request['cod_producto'];
+        $id_producto = $producto->id_producto;
 
-        return 0;
+        for ($i=1; $i < 20; $i++) {
+            DB::statement('ALTER TABLE categoria_pro Auto_increment = 1');
+            if (Cookie::get('r'.$i) == $i){
+                categoria::create([
+                'id_categoria' => Cookie::get('r'.$i),
+                'id_producto' => $id_producto,
+                ]);
+            }
+        }
     }
 
     /**

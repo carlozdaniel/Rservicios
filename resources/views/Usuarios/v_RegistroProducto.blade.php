@@ -59,8 +59,6 @@
 						<input type="number" name="descuento" class="form-control" step="any" placeholder="%">
 					</div>
 				</div>
-
-				<input type="hidden" name="id_producto" value="{{ $id_producto }}">
 				
 				<div class="row align-items-end">
 					<div class="col-md-3">
