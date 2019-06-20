@@ -42,9 +42,10 @@ class c_RegistroProducto extends Controller
      */
     public function store(Request $request)
     {
-        //Insertar de un producto y extraer id_producto
-            $producto = producto::create([
-                'id_producto' => '1E43D',
+      $date = date('d-H-Y-i-s-m');
+        
+           $producto = producto::create([
+                'id_producto' => $date,
                 'nombre_producto' => 'Prueba',
                 'id_vendedor' => 1,
                 'id_disponibilidad' => 1,
@@ -199,6 +200,8 @@ class c_RegistroProducto extends Controller
                 ]);
             }
         }
+
+        return view('Usuarios.v_RegistroProducto', compact('id_producto'));
     }
 
     /**

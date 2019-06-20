@@ -2,8 +2,29 @@
 
 @section('content')
 <div class="container">
-		<form action="" method="POST" accept-charset="utf-8">
+		<form action="{{ route('registro_P2.store') }}" method="POST" accept-charset="utf-8">@csrf
 			<div class="form-row">
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>Codigo del producto: </label>
+							<input type="text" name="cod_producto" required="" class="form-control">
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Nombre del producto: </label>
+							<input type="text" name="N_producto" required="" class="form-control">
+					</div>
+				</div>
+
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>Unidades disponibles: </label>
+							<input type="number" name="u_producto" required="" class="form-control">
+					</div>
+				</div>
+
 				<div class="col-md-12">
 					<div class="form-group">
 						<label>Descripción</label>
@@ -16,21 +37,30 @@
 						<label>Tipo de renta</label><br>
 						<select name="tip_renta" class="form-control" required="">
 							<option value="">Selecciona un tipo de renta</option>
-							<option value="hora">Hora</option>
-							<option value="dia">Dia</option>
-							<option value="mes">Mes</option>
-							<option value="semana">Semana</option>
-							<option value="ano">Año</option>
+							<option value="1">Hora</option>
+							<option value="2">Dia</option>
+							<option value="3">Mes</option>
+							<option value="4">Semana</option>
+							<option value="5">Año</option>
 						</select>
 					</div>
 				</div>
 
-				<div class="col-md-6">
+				<div class="col-md-3">
 					<div class="form-group">
 						<label>Precio: </label>
-						<input type="number" class="form-control" step="any" required="" placeholder="$">
+						<input type="number" name="precio" class="form-control" step="any" required="" placeholder="$">
 					</div>
 				</div>
+
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>Descuento: </label>
+						<input type="number" name="descuento" class="form-control" step="any" placeholder="%">
+					</div>
+				</div>
+
+				<input type="hidden" name="id_producto" value="{{ $id_producto }}">
 				
 				<div class="row align-items-end">
 					<div class="col-md-3">
