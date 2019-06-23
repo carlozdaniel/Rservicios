@@ -2,7 +2,8 @@
 
 @section('content')
 <div class="container">
-		<form action="{{ route('registro_P2.store') }}" method="POST" accept-charset="utf-8">@csrf
+	<div class="" style="font-size: 30px; text-align: center; background-color: #04AEF2; color: #ffffff;">Informacion general</div>
+		<form action="{{ route('registro_P2.store') }}" method="POST" class="mt-5" accept-charset="utf-8" enctype="multipart/form-data">@csrf
 			<div class="form-row">
 				<div class="col-md-3">
 					<div class="form-group">
@@ -62,7 +63,7 @@
 				
 				<div class="row align-items-end">
 					<div class="col-md-3">
-						<button type="submit" class="btn btn-primary" style="width: 180px;">Siguiente</button>
+						<button type="submit" class="btn btn-primary" style="width: 180px;">Finalizar</button>
 					</div>
 				</div>
 			</div>

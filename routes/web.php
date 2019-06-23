@@ -22,3 +22,4 @@ Route::get('principal', 'c_Principal@index')->name('principal');
 Route::resource('registro', 'c_RegistroUsuario');
 Route::resource('registro_s', 'c_RegistroProducto');
 Route::resource('registro_P2', 'c_RegistroProducto_P2');
+Route::resource('files', 'c_ImagenesProducto');	

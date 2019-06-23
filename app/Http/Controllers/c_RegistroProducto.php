@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Cookie;
 
 class c_RegistroProducto extends Controller
@@ -20,9 +21,15 @@ class c_RegistroProducto extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('productos.v_Categoria');
+        if (Auth::check()){
+            if($request->user()->hasRole('arrendatario')){
+                return view('productos.v_Categoria');
+            }else{
+                return back();
+            }
+        }
     }
 
     /**

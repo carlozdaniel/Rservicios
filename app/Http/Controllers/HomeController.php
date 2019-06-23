@@ -38,12 +38,10 @@ class HomeController extends Controller
 
          if($request->user()->hasRole('cliente'))
          {
-            $tip = "Cliente";
-            return view('home', compact('tip'));
+            return view('v_Principal');
          }
          if($request->user()->hasRole('arrendatario')){
-            $tip = "Arrendatario";
-            return view('home', compact('tip'));
+            return view('v_Principal');
          }
       }
     }

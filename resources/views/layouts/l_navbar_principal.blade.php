@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>RServicio</title>
+  <title>RServicio.MX</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"">
@@ -64,16 +64,23 @@
             }
         </style>
 
-<nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color: #44B8F2;">
+<nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color: #0367A5;">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" style="color: #fff;" href="{{  route('principal') }}">RServicio</a>
+      <a class="navbar-brand" style="color: #fff;" href="{{  route('principal') }}">RServicio.MX</a>
     </div>
     <ul class="nav navbar-nav">
 
-      <li class="dropdown"><!-- link -->
+      <li class="dropdown">
+         @guest
+         @else
+         @if (auth()->user()->hasRole('arrendatario'))
+            <li class="nav-item">
+                <a class="nav-link" style="color: #fff;" href="{{ route('registro_s.index') }}">{{ __('Servicios') }}</a>
+            </li>
+        @endif
+        @endguest
         <ul class="dropdown-menu">
-          <!-- link <i> -->
         </ul>
       </li>
 
@@ -90,7 +97,7 @@
             </li>
            @else
             <li class="nav-item dropdown">
-                    <a class="nav-link" style="color: #fff;" href="{{ route('logout') }}"
+                    <a class="nav-link btn-danger" style="color: #fff;" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
                         {{ __('Salir') }}

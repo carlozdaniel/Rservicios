@@ -2,7 +2,8 @@
 @section('content')
 
  <div class="container">
- 	<form method="POST" action="{{ route('registro_s.store') }}"> @csrf
+ 		<div class="" style="font-size: 30px; text-align: center; background-color: #04AEF2; color: #ffffff;">Categoria</div>
+ 	<form method="POST" action="{{ route('registro_s.store') }}" class="mt-5"> @csrf
 
  		<div class="form-row">
 	 		<div class="col-md-4">

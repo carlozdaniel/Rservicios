@@ -49,7 +49,7 @@ class c_RegistroProducto_P2 extends Controller
             $producto = producto::create([
             'id_producto' => $request['cod_producto'],
             'nombre_producto' => $request['N_producto'],
-            'id_vendedor' => 1,
+            'id_vendedor' => auth()->user()->id,
             'id_disponibilidad' => $request['tip_renta'],
             'precio' => $request['precio'],
             'unidades' => $request['u_producto'],
@@ -62,7 +62,7 @@ class c_RegistroProducto_P2 extends Controller
             $producto = producto::create([
             'id_producto' => $request['cod_producto'],
             'nombre_producto' => $request['N_producto'],
-            'id_vendedor' => 1,
+            'id_vendedor' => auth()->user()->id,
             'id_disponibilidad' => $request['tip_renta'],
             'precio' => $request['precio'],
             'unidades' => $request['u_producto'],
@@ -82,6 +82,8 @@ class c_RegistroProducto_P2 extends Controller
                 ]);
             }
         }
+
+        return view('productos.v_ImagenesProducto', compact('id_producto'));
     }
 
     /**
