@@ -97,7 +97,7 @@
             </li>
            @else
             <li class="nav-item dropdown">
-                    <a class="nav-link btn-danger" style="color: #fff;" href="{{ route('logout') }}"
+                    <a class="nav-link btn-danger" style="border: 0px solid red; border-radius: 3px; justify-content: center; align-content: center; text-align: center; color: #ffffff;" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
                         {{ __('Salir') }}

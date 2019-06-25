@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('v_Principal');
-});
+//Route::get('/', function () {
+  //  return view('v_Principal');
+//});
+
+Route::get('/', 'c_Principal@index');
 
 Auth::routes();
 
