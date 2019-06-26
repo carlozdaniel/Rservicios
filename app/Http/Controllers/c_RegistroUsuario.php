@@ -41,8 +41,23 @@ class c_RegistroUsuario extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
+        $request->validate([
+        'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'telefono' => ['required', 'string', 'max:10', 'min:10'],
+
+            'ciudad' => ['required', 'string', 'max:255'],
+            'colonia' => ['required', 'string', 'max:255'],
+            'calle' => ['required', 'string', 'max:255'],
+            'codigo_postal' => ['required', 'string', 'max:5', 'min:5'],
+
+            'tipo' => ['required', 'string', 'max:255'],
+        ]);
+
         DB::statement('ALTER TABLE users Auto_increment = 1');
         $usuario = User::create([
             'name' => $request['name'],
