@@ -15,5 +15,6 @@ class categoria extends Model
     protected $fillable = [
     	'id_categoria',
     	'id_producto',
+    	//..
     ];
 }
