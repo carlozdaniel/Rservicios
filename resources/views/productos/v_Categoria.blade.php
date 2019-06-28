@@ -2,7 +2,7 @@
 @section('content')
 
  <div class="container">
- 		<div class="" style="font-size: 30px; text-align: center; background-color: #04AEF2; color: #ffffff;">Categoria</div>
+ 		<div class="mt-3" style="font-size: 30px; text-align: center; background-color: #04AEF2; color: #ffffff;">Categoria</div>
  	<form method="POST" action="{{ route('registro_s.store') }}" class="mt-5"> @csrf
 
  		<div class="form-row">

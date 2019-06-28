@@ -18,7 +18,7 @@
 </style>
 @endsection
 	<div class="container">
-		<div class="" style="font-size: 30px; text-align: center; background-color: #04AEF2; color: #ffffff;">Imagenes</div>
+		<div class="mt-3" style="font-size: 30px; text-align: center; background-color: #04AEF2; color: #ffffff;">Imagenes</div>
 		<div class="row">
 			<div class="col-md-12 col-md-offset-0 mt-5">
 				<div class="panel panel-default">

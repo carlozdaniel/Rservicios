@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-	<div class="" style="font-size: 30px; text-align: center; background-color: #04AEF2; color: #ffffff;">Informacion general</div>
+	<div class="mt-3" style="font-size: 30px; text-align: center; background-color: #04AEF2; color: #ffffff;">Informacion general</div>
 		<form action="{{ route('registro_P2.store') }}" method="POST" class="mt-5" accept-charset="utf-8" enctype="multipart/form-data">@csrf
 			<div class="form-row">
 				<div class="col-md-3 mt-2">
